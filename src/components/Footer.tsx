@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
+  const currentYear = new Date().getFullYear();
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "FAQ", path: "/faq" },
+    { name: "Contact us", path: "/contact" },
+  ];
 
   return (
     <footer className="mt-16 bg-[#D2EBC7] py-10">
@@ -19,60 +26,42 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="grid lg:grid-cols-2 gap-6 items-start">
-            <div>
-              <h4 className="text-[18px] font-extrabold mb-2">
-                Join Our Newsletter
-              </h4>
-              <p className="opacity-90 text-[14px]">
-                Never miss an update from us, be the first to know about the
-                latest information as soon as they are released to the public.
-              </p>
-            </div>
-            <div className="flex items-center justify-start lg:justify-end">
-              <div className="relative w-full max-w-xl">
-                <input
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full rounded-full bg-transparent border border-white/20 px-5 py-3 pr-12 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
-                />
-                <button
-                  className="absolute right-1 top-1.5 h-9 w-9 rounded-full bg-primary text-white grid place-items-center shadow hover:opacity-90 transition"
-                  aria-label="Subscribe"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="M12 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
-          <div className="my-5 h-px w-full bg-white/10" />
+          {/* Divider */}
+          <div className="h-px w-full bg-white/10 mb-8" />
 
-          <div className="flex items-center justify-between">
+          {/* Logo, Copyright, and Social Media */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            {/* Logo */}
             <img src="/logo.svg" alt="NJFP" className="h-8 w-auto" />
-            <div className="flex items-center gap-4 text-white/80">
+            
+            {/* Copyright */}
+            <p className="text-white/60 text-sm">
+              © {currentYear} Nigeria Jubilee Fellows Programme. All rights reserved.
+            </p>
+            
+            {/* Social Media */}
+            <div className="flex items-center gap-4">
               <a
                 href="#"
                 aria-label="Instagram"
-                className="hover:text-white transition"
+                className="text-white/60 hover:text-white transition-colors duration-300"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -88,11 +77,11 @@ const Footer = () => {
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="hover:text-white transition"
+                className="text-white/60 hover:text-white transition-colors duration-300"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
@@ -102,17 +91,17 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                aria-label="YouTube"
-                className="hover:text-white transition"
+                aria-label="Twitter"
+                className="text-white/60 hover:text-white transition-colors duration-300"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z" />
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                 </svg>
               </a>
             </div>

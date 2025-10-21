@@ -51,7 +51,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-16 h-16 m-5 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg border-4 border-white">
               <img
-                src="/student-2.jpg"
+                src="/student-4.jpg"
                 alt="African university student"
                 className="w-full h-full object-cover"
               />
@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-16 h-16 m-5 lg:w-20 lg:h-20 rounded-full overflow-hidden shadow-lg border-4 border-white">
               <img
-                src="/student-4.jpg"
+                src="/student-2.jpg"
                 alt="African university student"
                 className="w-full h-full object-cover"
               />
@@ -151,10 +151,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            The Nigeria Jubilee Fellows Programme provides young graduates with
-            fully paid, 12-month placements across leading organizations,
-            equipping them with practical experience and leadership skills
-            needed for the future of work.
+            The Nigeria Jubilee Fellows Programme exists to address the
+            fundamental challenges that fresh graduates face as they navigate
+            complex labour markets to access meaningful work and employment
+            after they graduate. It serves as a bridge connecting the potential
+            of young fresh graduates to work opportunities that exist within
+            private sector entities.
           </motion.p>
 
           <motion.div
@@ -203,18 +205,14 @@ const Hero = () => {
         >
           <div className="text-center mb-10">
             <h3 className="text-lg font-semibold text-primary mb-1">
-              Powered by Leading Organizations
+              Brought to you by
             </h3>
-            <p className="text-sm text-gray-500">
-              Created and supported by top-tier organizations to create
-              meaningful career opportunities
-            </p>
           </div>
 
           <div className="flex justify-center items-center gap-12">
             {/* Partner 1 */}
             <motion.div
-              className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 border-gray-100"
+              className="group relative p-6 rounded-xl transition-all duration-300 border-gray-100"
               whileHover={{ y: -2 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -231,7 +229,7 @@ const Hero = () => {
 
             {/* Partner 2 */}
             <motion.div
-              className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 border-gray-100"
+              className="group relative p-6  rounded-xl transition-all duration-300 border-gray-100"
               whileHover={{ y: -2 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -248,7 +246,7 @@ const Hero = () => {
 
             {/* Partner 3 */}
             <motion.div
-              className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105 border-gray-100"
+              className="group relative p-6 rounded-xl transition-all duration-300 border-gray-100"
               whileHover={{ y: -2 }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}

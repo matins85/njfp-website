@@ -8,38 +8,59 @@ const Highlights = () => {
   const fellowsPrograms = [
     {
       id: 1,
-      title: "Fully Paid Experience",
+      title: "12-Month Paid Work Placements",
       description:
-        "12-month meaningful work placement with monthly stipend of NGN 150,000. No financial burden on fellows - focus entirely on learning and professional growth.",
-      image: "/hero-1.png",
+        "12-month paid work placements available in both private and public sectors, designed to provide valuable hands-on experience and enhance your career prospects.",
+      image: "/image-1.png",
     },
     {
       id: 2,
-      title: "Leading Organizations",
+      title: "Monthly Stipend",
       description:
-        "Work with top-tier companies and organizations across 36 States + FCT. Gain exposure to industry best practices and cutting-edge technologies.",
-      image: "/hero-2.png",
+        "A monthly stipend of 150,000 NGN for the entire duration of the Fellowship, ensuring financial support throughout your journey.",
+      image: "/hands.png",
     },
     {
       id: 3,
-      title: "Comprehensive Support",
+      title: "Alumni Talent Hub",
       description:
-        "Mentorship, training, and hands-on experience in your chosen field. Build essential skills and expand your professional network with industry experts.",
-      image: "/hero-3.png",
+        "A further (unpaid) six months of career guidance and support in the Alumni Talent Hub for continued professional development.",
+      image: "/image-9.png",
     },
     {
       id: 4,
-      title: "Career Acceleration",
+      title: "National Coverage",
       description:
-        "Jumpstart your career with real-world experience. Post-fellowship pathways: retention by host, entrepreneurship, or new roles leveraging year-long experience.",
-      image: "/hero-4.png",
+        "National Coverage across the 36 States and the Federal Capital Territory (FCT), providing opportunities nationwide.",
+      image: "/hero-5.png",
     },
     {
       id: 5,
-      title: "Alumni Network",
+      title: "Employability Skills Training",
       description:
-        "Join our growing community of successful fellows. 6-month Alumni Talent Hub support and lifelong connections for continued professional development.",
-      image: "/hero-5.png",
+        "Comprehensive employability skills training to enhance your professional capabilities and market readiness.",
+      image: "/image-4.png",
+    },
+    {
+      id: 6,
+      title: "Entrepreneurship Skills Training",
+      description:
+        "Entrepreneurship skills training to develop business acumen and entrepreneurial mindset for future ventures.",
+      image: "/image-11.png",
+    },
+    {
+      id: 7,
+      title: "Digital Literacy Training",
+      description:
+        "Digital literacy and digital skills training to stay competitive in the modern digital economy.",
+      image: "/image-10.png",
+    },
+    {
+      id: 8,
+      title: "Mentorship Opportunities",
+      description:
+        "Access to mentorship opportunities with industry professionals and experienced leaders for guidance and career development.",
+      image: "/image-7.png",
     },
   ];
 
@@ -92,7 +113,7 @@ const Highlights = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-10"
+          className="text-left mb-18"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -101,165 +122,77 @@ const Highlights = () => {
           <h2 className="text-4xl font-bold text-primary mb-1">
             Programme Highlights
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover the journey and opportunities available through the Nigeria
-            Jubilee Fellows Programme
+          <p className="text-lg text-gray-600 max-w-7xl">
+            The Nigeria Jubilee Fellows Programme (NJFP) is a Federal Government of Nigeria
+            initiative funded by the European Union (EU) and implemented in partnership with the
+            United Nations Development Programme (UNDP).
           </p>
         </motion.div>
 
-        {/* Premium Flow Switcher */}
-        <motion.div
+        {/* Elegant Tab Switcher - Commented Out */}
+        {/* <motion.div
           className="flex justify-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="relative bg-gradient-to-r from-white via-gray-50 to-white rounded-3xl p-3 shadow-md border-gray-200/50 backdrop-blur-sm">
-            {/* Animated Background Slider */}
-            <motion.div
-              className="absolute inset-3 bg-gradient-to-r from-primary via-primary/90 to-primary rounded-2xl shadow-lg"
-              initial={false}
-              animate={{
-                x: activeFlow === "fellows" ? 0 : "100%",
-                width: "50%",
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 400,
-                damping: 25,
-              }}
-            />
-
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-            {/* Floating Particles */}
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
-            <div
-              className="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-primary/50 rounded-full animate-pulse"
-              style={{ animationDelay: "0.5s" }}
-            />
-            <div
-              className="absolute top-1/2 -right-2 w-1 h-1 bg-primary/60 rounded-full animate-pulse"
-              style={{ animationDelay: "1s" }}
-            />
-            <div
-              className="absolute top-1/2 -left-2 w-1 h-1 bg-primary/30 rounded-full animate-pulse"
-              style={{ animationDelay: "1.5s" }}
-            />
-
-            <div className="relative flex">
-              <motion.button
-                onClick={() => setActiveFlow("fellows")}
-                className="group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-500 z-10 min-w-0"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+          <div className="flex space-x-1 bg-gray-50 rounded-xl p-1.5 shadow-sm border border-gray-200/50">
+            <motion.button
+              onClick={() => setActiveFlow("fellows")}
+              className={`relative px-8 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                activeFlow === "fellows"
+                  ? "text-white shadow-lg"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {activeFlow === "fellows" && (
                 <motion.div
-                  className="relative flex-shrink-0"
-                  animate={{
-                    rotate: activeFlow === "fellows" ? [0, -10, 10, 0] : 0,
-                    scale: activeFlow === "fellows" ? 1.1 : 1,
-                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-lg"
+                  layoutId="activeTab"
                   transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 30,
                   }}
-                >
-                  <GraduationCap
-                    className={`w-5 h-5 transition-colors duration-300 ${
-                      activeFlow === "fellows"
-                        ? "text-white"
-                        : "text-gray-600 group-hover:text-primary"
-                    }`}
-                  />
-                </motion.div>
-
-                <span
-                  className={`text-sm font-bold transition-colors duration-300 ${
-                    activeFlow === "fellows"
-                      ? "text-white"
-                      : "text-gray-600 group-hover:text-primary"
-                  }`}
-                >
-                  For Fellows
-                </span>
-
-                {/* Ripple Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl bg-white/30"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 0, opacity: 0 }}
-                  whileTap={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
                 />
+              )}
+              <div className="relative flex items-center gap-2">
+                <GraduationCap className="w-4 h-4" />
+                <span>For Fellows</span>
+              </div>
+            </motion.button>
 
-                {/* Shimmer Effect */}
+            <motion.button
+              onClick={() => setActiveFlow("host")}
+              className={`relative px-8 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                activeFlow === "host"
+                  ? "text-white shadow-lg"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {activeFlow === "host" && (
                 <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: activeFlow === "fellows" ? "100%" : "-100%" }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                />
-              </motion.button>
-
-              <motion.button
-                onClick={() => setActiveFlow("host")}
-                className="group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-500 z-10 min-w-0"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <motion.div
-                  className="relative flex-shrink-0"
-                  animate={{
-                    rotate: activeFlow === "host" ? [0, -10, 10, 0] : 0,
-                    scale: activeFlow === "host" ? 1.1 : 1,
-                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90 rounded-lg"
+                  layoutId="activeTab"
                   transition={{
-                    duration: 0.6,
-                    ease: "easeInOut",
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 30,
                   }}
-                >
-                  <Building2
-                    className={`w-5 h-5 transition-colors duration-300 ${
-                      activeFlow === "host"
-                        ? "text-white"
-                        : "text-gray-600 group-hover:text-primary"
-                    }`}
-                  />
-                </motion.div>
-
-                <span
-                  className={`text-sm font-bold transition-colors duration-300 ${
-                    activeFlow === "host"
-                      ? "text-white"
-                      : "text-gray-600 group-hover:text-primary"
-                  }`}
-                >
-                  For Host Organizations
-                </span>
-
-                {/* Ripple Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl bg-white/30"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 0, opacity: 0 }}
-                  whileTap={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
                 />
-
-                {/* Shimmer Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: activeFlow === "host" ? "100%" : "-100%" }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                />
-              </motion.button>
-            </div>
+              )}
+              <div className="relative flex items-center gap-2">
+                <Building2 className="w-4 h-4" />
+                <span>For Host Organizations</span>
+              </div>
+            </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Timeline Content */}
         <div className="relative">
@@ -267,11 +200,11 @@ const Highlights = () => {
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform -translate-x-0.5 hidden lg:block" />
 
           {/* Programs List */}
-          <div className="space-y-16">
+          <div className="space-y-8">
             {currentPrograms.map((program, index) => (
               <motion.div
                 key={program.id}
-                className={`flex items-center gap-12 ${
+                className={`flex items-center gap-6 ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -297,9 +230,9 @@ const Highlights = () => {
                     ease: "easeOut"
                   }}
                 >
-                  <div className="max-w-md mx-auto lg:mx-0">
+                  <div className="max-w-lg mx-auto lg:mx-0">
                     <motion.h3 
-                      className="text-2xl font-bold text-gray-900 mb-4"
+                      className="text-xl font-bold text-gray-900 mb-3"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
@@ -312,7 +245,7 @@ const Highlights = () => {
                       {program.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-gray-600 leading-relaxed"
+                      className="text-sm text-gray-600 leading-relaxed"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
@@ -364,12 +297,10 @@ const Highlights = () => {
                     ease: "easeOut"
                   }}
                 >
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="flex justify-center">
                     {/* Main Image */}
                     <motion.div
-                      className={`${
-                        index % 2 === 0 ? "col-span-2" : "col-span-1"
-                      } relative group`}
+                      className="relative group"
                       initial={{ opacity: 0, y: 30, scale: 0.9 }}
                       whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       viewport={{ once: true, margin: "-50px" }}
@@ -380,110 +311,17 @@ const Highlights = () => {
                       }}
                       whileHover={{ scale: 1.02 }}
                     >
-                      <div className="relative overflow-hidden rounded-2xl shadow-lg">
+                      <div className="relative overflow-hidden rounded-xl shadow-md">
                         <img
                           src={program.image}
                           alt={program.title}
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-72 h-36 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </motion.div>
 
-                    {/* Additional Images */}
-                    {index % 2 === 0 && (
-                      <>
-                        <motion.div
-                          className="relative group"
-                          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ 
-                            duration: 0.6, 
-                            delay: index * 0.2 + 0.5,
-                            ease: "easeOut"
-                          }}
-                          whileHover={{ scale: 1.02 }}
-                        >
-                          <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                              src="/hero-2.png"
-                              alt="Program highlight"
-                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        </motion.div>
-                        <motion.div
-                          className="relative group"
-                          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ 
-                            duration: 0.6, 
-                            delay: index * 0.2 + 0.6,
-                            ease: "easeOut"
-                          }}
-                          whileHover={{ scale: 1.02 }}
-                        >
-                          <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                              src="/hero-3.png"
-                              alt="Program highlight"
-                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        </motion.div>
-                      </>
-                    )}
 
-                    {index % 2 === 1 && (
-                      <>
-                        <motion.div
-                          className="relative group"
-                          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ 
-                            duration: 0.6, 
-                            delay: index * 0.2 + 0.5,
-                            ease: "easeOut"
-                          }}
-                          whileHover={{ scale: 1.02 }}
-                        >
-                          <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                              src="/hero-4.png"
-                              alt="Program highlight"
-                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        </motion.div>
-                        <motion.div
-                          className="relative group"
-                          initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ 
-                            duration: 0.6, 
-                            delay: index * 0.2 + 0.6,
-                            ease: "easeOut"
-                          }}
-                          whileHover={{ scale: 1.02 }}
-                        >
-                          <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                              src="/hero-5.png"
-                              alt="Program highlight"
-                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        </motion.div>
-                      </>
-                    )}
                   </div>
                 </motion.div>
               </motion.div>

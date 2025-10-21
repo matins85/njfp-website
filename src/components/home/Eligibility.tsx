@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-import { BadgeCheck, GraduationCap, Clock, BriefcaseBusiness, CheckCircle, IdCard } from "lucide-react";
+import {
+  BadgeCheck,
+  BriefcaseBusiness,
+  CheckCircle,
+  Clock,
+  Globe,
+  GraduationCap,
+  IdCard,
+  MessageSquare,
+  Target,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const Eligibility = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,51 +18,51 @@ const Eligibility = () => {
 
   const galleryImages = [
     {
-      src: "/hero-1.png",
+      src: "/image-2.png",
       alt: "NJFP Fellows with social media frames showing #JubileeFellows and #ProudlyJubilee",
-      title: "Community & Pride"
+      title: "Community & Pride",
     },
     {
-      src: "/image-4.png", 
+      src: "/image-3.png",
       alt: "Fellow holding SDG 8 sign for Decent Work and Economic Growth",
-      title: "Sustainable Development Goals"
+      title: "Sustainable Development Goals",
     },
     {
-      src: "/image-1.png",
+      src: "/image-11.png",
       alt: "Professional fellow in red vest representing program impact",
-      title: "Professional Development"
+      title: "Professional Development",
     },
     {
-      src: "/hero-2.png",
+      src: "/image-8.png",
       alt: "Fellows networking and building connections",
-      title: "Networking & Connections"
+      title: "Networking & Connections",
     },
     {
-      src: "/hero-3.png",
+      src: "/image-7.png",
       alt: "Fellows in professional work environment",
-      title: "Work Experience"
+      title: "Work Experience",
     },
     {
-      src: "/hero-4.png",
+      src: "/image-9.png",
       alt: "Fellows celebrating achievements",
-      title: "Achievements & Growth"
+      title: "Achievements & Growth",
     },
     {
-      src: "/hero-5.png",
+      src: "/image-10.png",
       alt: "Fellows in learning and development sessions",
-      title: "Learning & Development"
+      title: "Learning & Development",
     },
     // Duplicate for seamless loop
     {
-      src: "/hero-1.png",
+      src: "/hero-5.jpg",
       alt: "NJFP Fellows with social media frames showing #JubileeFellows and #ProudlyJubilee",
-      title: "Community & Pride"
+      title: "Community & Pride",
     },
     {
-      src: "/image-4.png", 
+      src: "/image-4.png",
       alt: "Fellow holding SDG 8 sign for Decent Work and Economic Growth",
-      title: "Sustainable Development Goals"
-    }
+      title: "Sustainable Development Goals",
+    },
   ];
 
   // Auto-scroll effect (smooth + seamless)
@@ -98,23 +108,69 @@ const Eligibility = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-lg font-extrabold text-[#333333] mb-1">
+            <h3 className="text-3xl font-bold text-primary mb-4">
               Who can apply? (Eligibility Criteria)
             </h3>
-            <p className="text-sm text-gray-600 mb-6">Clear, simple requirements – designed to include talented graduates nationwide.</p>
 
             {(() => {
               const eligibilityItems = [
-                { title: "Nigerian citizen", desc: "Open to graduates across all 36 States + FCT.", Icon: BadgeCheck },
-                { title: "Recent graduate", desc: "Bachelor's degree or HND (not earlier than 2022).", Icon: GraduationCap },
-                { title: "Academic standing", desc: "Min. 2:2 (BSc) or Upper Credit (HND).", Icon: CheckCircle },
-                { title: "Age requirement", desc: "30 years old or younger.", Icon: Clock },
-                { title: "Availability", desc: "Not currently engaged in full‑time employment.", Icon: BriefcaseBusiness },
-                { title: "NYSC status", desc: "Completed NYSC or have official exemption.", Icon: IdCard },
+                {
+                  title: "Nigerian citizen",
+                  desc: "Nigerian citizen",
+                  Icon: BadgeCheck,
+                },
+                {
+                  title: "Fresh graduate",
+                  desc: "Fresh graduate (bachelor's degree or HND Certificate) from any discipline and graduated not earlier than 2022.",
+                  Icon: GraduationCap,
+                },
+                {
+                  title: "Academic standing",
+                  desc: "Graduated with at least a Second-Class Lower (2.2) for bachelor's degree or Upper Credit (> 3.00) for HND Certificate holders.",
+                  Icon: CheckCircle,
+                },
+                {
+                  title: "Age requirement",
+                  desc: "30 years old or younger.",
+                  Icon: Clock,
+                },
+                {
+                  title: "Employment status",
+                  desc: "Not currently engaged in any employment.",
+                  Icon: BriefcaseBusiness,
+                },
+                {
+                  title: "NYSC status",
+                  desc: "Completed the mandatory National Youth Service Corps (NYSC) OR have a certificate of exemption from the NYSC.",
+                  Icon: IdCard,
+                },
+                {
+                  title: "Career commitment",
+                  desc: "Demonstrate interest/commitment in chosen career field.",
+                  Icon: Target,
+                },
+                {
+                  title: "Development commitment",
+                  desc: "Demonstrate interest/commitment to contributing to Nigeria's socio-economic development.",
+                  Icon: Globe,
+                },
+                {
+                  title: "Professional attitude",
+                  desc: "Excellent time management and a professional attitude.",
+                  Icon: CheckCircle,
+                },
+                {
+                  title: "Communication skills",
+                  desc: "Good verbal and written communication skills.",
+                  Icon: MessageSquare,
+                },
               ];
 
               const docsItems = [
-                { title: "Degree Certificate (Notarized)", Icon: GraduationCap },
+                {
+                  title: "Degree Certificate (Notarized)",
+                  Icon: GraduationCap,
+                },
                 { title: "NYSC Certificate / Exemption", Icon: IdCard },
               ];
 
@@ -133,12 +189,16 @@ const Eligibility = () => {
                         whileHover={{ y: -2 }}
                       >
                         <div className="flex items-start gap-3">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg text-primary">
                             <item.Icon className="h-5 w-5" />
                           </div>
                           <div>
-                            <div className="text-[15px] font-semibold text-[#111]">{item.title}</div>
-                            <div className="text-[13px] text-gray-600 leading-snug">{item.desc}</div>
+                            <div className="text-[15px] font-semibold text-[#111]">
+                              {item.title}
+                            </div>
+                            <div className="text-[13px] text-gray-600 leading-snug">
+                              {item.desc}
+                            </div>
                           </div>
                         </div>
                       </motion.div>
@@ -147,7 +207,9 @@ const Eligibility = () => {
 
                   {/* Documentation */}
                   <div>
-                    <h4 className="text-sm font-extrabold text-[#333333] mb-3">Documentation Required</h4>
+                    <h4 className="text-sm font-extrabold text-[#333333] mb-3">
+                      Documentation Required
+                    </h4>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {docsItems.map((doc, idx) => (
                         <motion.div
@@ -156,12 +218,17 @@ const Eligibility = () => {
                           initial={{ opacity: 0, y: 10 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.35, delay: 0.2 + idx * 0.05 }}
+                          transition={{
+                            duration: 0.35,
+                            delay: 0.2 + idx * 0.05,
+                          }}
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary/10 text-primary">
                             <doc.Icon className="h-4 w-4" />
                           </div>
-                          <span className="text-[13px] text-[#333] font-medium">{doc.title}</span>
+                          <span className="text-[13px] text-[#333] font-medium">
+                            {doc.title}
+                          </span>
                         </motion.div>
                       ))}
                     </div>
@@ -171,14 +238,26 @@ const Eligibility = () => {
             })()}
 
             <div className="mt-4 flex items-center gap-3">
-              <button onClick={() => { window.location.href = "https://fellow-staging.njfp.ng/registration/"; }} className="relative inline-flex items-center px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-sm hover:shadow-md transition">
+              <button
+                onClick={() => {
+                  window.location.href =
+                    "https://fellow-staging.njfp.ng/registration/";
+                }}
+                className="relative inline-flex items-center px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-sm hover:shadow-md transition"
+              >
                 <span className="relative z-10">Apply as a Fellow</span>
                 <span
                   className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/25 via-white/0 to-white/25 translate-x-[-120%] skew-x-[-20deg] rounded-full"
                   style={{ animation: "shine 1.6s ease-in-out infinite" }}
                 />
               </button>
-              <button onClick={() => { window.location.href = "https://host-staging.njfp.ng/registration/"; }} className="relative inline-flex items-center px-4 py-2 rounded-full bg-white text-primary text-sm font-semibold shadow-sm hover:shadow-md transition">
+              <button
+                onClick={() => {
+                  window.location.href =
+                    "https://host-staging.njfp.ng/registration/";
+                }}
+                className="relative inline-flex items-center px-4 py-2 rounded-full bg-white text-primary text-sm font-semibold shadow-sm hover:shadow-md transition"
+              >
                 <span className="relative z-10">
                   Apply as a Host Organisation
                 </span>
@@ -189,7 +268,6 @@ const Eligibility = () => {
               </button>
             </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -201,7 +279,11 @@ const Eligibility = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div 
+        {/* Gallery Title */}
+        <div className="text-left max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <h3 className="text-3xl font-bold text-primary mb-2">Gallery</h3>
+        </div>
+        <div
           className="relative overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -209,24 +291,24 @@ const Eligibility = () => {
           {/* Auto-scrolling carousel (duplicated content for seamless loop) */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8"
+            className="flex gap-4 overflow-y-hidden overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8"
             style={{
-              scrollBehavior: 'auto',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
+              scrollBehavior: "auto",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             {[...galleryImages, ...galleryImages].map((image, index) => (
               <motion.div
                 key={`${image.src}-${index}`}
-                className="flex-shrink-0 w-80 h-64 relative group"
+                className="flex-shrink-0 w-80 h-56 relative group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.1,
-                  ease: "easeOut"
+                  ease: "easeOut",
                 }}
                 whileHover={{ scale: 1.02 }}
               >
@@ -234,21 +316,8 @@ const Eligibility = () => {
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                  
-                  {/* Image title overlay */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white font-semibold text-sm mb-1">
-                      {image.title}
-                    </h4>
-                    <div className="flex items-center gap-2 text-white/80 text-xs">
-                      <span>#JubileeFellows</span>
-                      <span>•</span>
-                      <span>#ProudlyJubilee</span>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             ))}

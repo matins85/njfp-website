@@ -101,7 +101,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6 tracking-tight">
               Contact us.
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
