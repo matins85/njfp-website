@@ -174,7 +174,7 @@ const Hero = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="text-sm relative z-10 flex items-center gap-2">
-                Apply as a fellow
+                Apply as a Fellow
               </span>
             </button>
             <button

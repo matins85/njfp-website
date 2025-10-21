@@ -85,7 +85,7 @@ const Highlights = () => {
     activeFlow === "fellows" ? fellowsPrograms : hostPrograms;
 
   return (
-    <section className="py-20 lg:py-24 relative overflow-hidden">
+    <section className="pb-20 pt-10 relative overflow-hidden">
       {/* Noise Background */}
       <div className="noise-overlay absolute inset-0 z-0 opacity-30 mix-blend-screen" />
 
