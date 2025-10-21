@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="py-8 sm:pt-12 sm:pb-52 relative overflow-hidden">
+    <section className="py-8 sm:pt-12 pb-10 lg:pb-52 relative overflow-hidden">
       {/* Noise Background */}
       <div className="noise-overlay absolute inset-0 z-0 opacity-30 mix-blend-screen" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,14 +65,110 @@ const About = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mt-8 sm:mt-12">
           {/* Title */}
-          <div className="text-left mb-14">
+          <div className="text-left mb-8 sm:mb-14">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               The Journey of a Fellow
             </h3>
           </div>
 
-          {/* Journey Steps */}
-          <div className="relative min-h-[800px] sm:min-h-[900px]">
+          {/* Journey Steps - Mobile: Vertical flow, Desktop: Absolute positioning */}
+          <div className="block lg:hidden space-y-8">
+            {/* Mobile: Vertical flow for all steps */}
+            {[
+              {
+                step: 1,
+                title: "Application",
+                description: "A young graduate who has completed their mandatory Nigeria Youth Service Corps (NYSC) year applies to become a Fellow with required documentation.",
+                hasProfile: false
+              },
+              {
+                step: 2,
+                title: "Selection Process",
+                description: "Once application and documentation are approved, the applicant sits through a series of tests – a computer-based aptitude test, a video submission, and finally a psychometric assessment.",
+                hasProfile: false
+              },
+              {
+                step: 3,
+                title: "Onboarding",
+                description: "Once they have successfully passed and completed these assessments, they will join the applicant pool where they will build their CVs and await a suitable match with a Host Organization. Placement is based on a match between an available Host Organization's talent requirements and an applicant's development needs, within a specific catchment area.",
+                hasProfile: true
+              },
+              {
+                step: 4,
+                title: "Work Placement",
+                description: "Once a match is made, the onboarding and placement processes begin. When an applicant is invited to begin work by their Host Organization, and they resume, then they become a Fellow.",
+                hasProfile: false
+              },
+              {
+                step: 5,
+                title: "Mentorship & Growth",
+                description: "After their 12-month paid Fellowship, Fellows who are not retained by their Host Organization or do not find other means of employment, may be offboarded into the Talent Hub for alumni.",
+                hasProfile: false
+              },
+              {
+                step: 6,
+                title: "Alumni Talent Hub",
+                description: "Alumni receive further career guidance and support for a further unpaid six (6) months in the Talent Hub. Please note that being in the applicant pool does not make one a Fellow and it does not guarantee placement.",
+                hasProfile: true
+              }
+            ].map((stepData, index) => (
+              <motion.div
+                key={stepData.step}
+                className="relative bg-gradient-to-br from-orange-100 to-white rounded-2xl p-6 shadow-lg border border-orange-200/50"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                {/* Step Number */}
+                <div className="absolute -top-2 -left-2 w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-lg sm:text-xl">{stepData.step}</span>
+                </div>
+                <div className="absolute -top-1 -left-1 w-8 h-8 sm:w-10 sm:h-10 bg-orange-200/60 rounded-lg"></div>
+
+                <div className="pt-4 sm:pt-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">
+                    {stepData.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {stepData.description}
+                  </p>
+                </div>
+
+                {/* Profile Pictures for steps 3 and 6 */}
+                {stepData.hasProfile && (
+                  <div className="absolute -top-2 -right-2 flex">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white shadow-lg overflow-hidden">
+                      <img
+                        src={stepData.step === 3 ? "/student.jpg" : "/hero-4.png"}
+                        alt="Fellow"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-white shadow-lg overflow-hidden -ml-2">
+                      <img
+                        src={stepData.step === 3 ? "/student-2.jpg" : "/hero-5.png"}
+                        alt="Fellow"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    {stepData.step === 3 && (
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-white shadow-lg overflow-hidden -ml-2">
+                        <img
+                          src="/student-3.jpg"
+                          alt="Fellow"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Desktop: Original absolute positioning */}
+          <div className="hidden lg:block relative min-h-[800px] sm:min-h-[900px]">
             {/* Step 1 - Application */}
             <motion.div
               className="absolute top-0 left-0 w-80 sm:w-96"

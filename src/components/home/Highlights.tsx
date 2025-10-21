@@ -113,16 +113,16 @@ const Highlights = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-left mb-18"
+          className="text-left mb-12 sm:mb-18"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-primary mb-1">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-2 sm:mb-1">
             Programme Highlights
           </h2>
-          <p className="text-lg text-gray-600 max-w-7xl">
+          <p className="text-base sm:text-lg text-gray-600 max-w-7xl">
             The Nigeria Jubilee Fellows Programme (NJFP) is a Federal Government of Nigeria
             initiative funded by the European Union (EU) and implemented in partnership with the
             United Nations Development Programme (UNDP).
@@ -196,15 +196,15 @@ const Highlights = () => {
 
         {/* Timeline Content */}
         <div className="relative">
-          {/* Vertical Timeline Line */}
+          {/* Vertical Timeline Line - Hidden on mobile */}
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform -translate-x-0.5 hidden lg:block" />
 
           {/* Programs List */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {currentPrograms.map((program, index) => (
               <motion.div
                 key={program.id}
-                className={`flex items-center gap-6 ${
+                className={`flex flex-col lg:flex-row items-center gap-4 sm:gap-6 ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -218,7 +218,7 @@ const Highlights = () => {
               >
                 {/* Content Side */}
                 <motion.div
-                  className={`flex-1 ${
+                  className={`flex-1 w-full text-center lg:text-left ${
                     index % 2 === 0 ? "lg:text-right" : "lg:text-left"
                   }`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -232,7 +232,7 @@ const Highlights = () => {
                 >
                   <div className="max-w-lg mx-auto lg:mx-0">
                     <motion.h3 
-                      className="text-xl font-bold text-gray-900 mb-3"
+                      className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
@@ -245,7 +245,7 @@ const Highlights = () => {
                       {program.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-sm text-gray-600 leading-relaxed"
+                      className="text-sm sm:text-sm text-gray-600 leading-relaxed"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
@@ -287,7 +287,7 @@ const Highlights = () => {
 
                 {/* Image Side */}
                 <motion.div 
-                  className="flex-1"
+                  className="flex-1 w-full"
                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -315,13 +315,11 @@ const Highlights = () => {
                         <img
                           src={program.image}
                           alt={program.title}
-                          className="w-72 h-36 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          className="w-full max-w-sm sm:w-72 h-32 sm:h-36 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </motion.div>
-
-
                   </div>
                 </motion.div>
               </motion.div>

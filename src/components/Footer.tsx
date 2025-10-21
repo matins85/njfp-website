@@ -48,7 +48,7 @@ const Footer = () => {
             <img src="/logo.svg" alt="NJFP" className="h-8 w-auto" />
             
             {/* Copyright */}
-            <p className="text-white/60 text-sm">
+            <p className="text-center text-white/60 text-sm">
               © {currentYear} Nigeria Jubilee Fellows Programme. All rights reserved.
             </p>
             
